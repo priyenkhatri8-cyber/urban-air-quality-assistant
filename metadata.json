@@ -1,0 +1,6 @@
+{
+  "name": "VayuSense — Smart Environmental Intelligence Platform",
+  "description": "Urban Air Quality Assistant and Smart Environmental Intelligence Platform featuring live atmospheric monitoring, interactive Leaflet pollution maps, hotspot detection, low-exposure routing, forecasting, multilingual Gemini AI investigation, and PDF/CSV reporting.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

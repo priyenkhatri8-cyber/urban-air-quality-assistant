@@ -1,0 +1,60 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-sans: 'DM Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Ensure Leaflet map tiles and controls align nicely in both light and dark modes */
+.leaflet-container {
+  font-family: var(--font-sans);
+  z-index: 1;
+}
+
+.dark .leaflet-tile-pane {
+  filter: invert(92%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+
+.dark .leaflet-popup-content-wrapper,
+.dark .leaflet-popup-tip {
+  background-color: #0f172a;
+  color: #f1f5f9;
+  border: 1px solid #1e293b;
+}
+
+.dark .leaflet-control-zoom a {
+  background-color: #0f172a;
+  color: #e2e8f0;
+  border-color: #1e293b;
+}
+
+.dark .leaflet-control-zoom a:hover {
+  background-color: #1e293b;
+}
+
+/* Smooth reduced-motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
